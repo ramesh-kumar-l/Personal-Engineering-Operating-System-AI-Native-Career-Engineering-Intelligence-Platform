@@ -1,0 +1,504 @@
+{
+  "version": "0.1",
+  "task": {
+    "type": "test",
+    "request": "add a unit test for the context compiler"
+  },
+  "repository": {
+    "name": "Engineering-Context-Compiler",
+    "commit": "45fd3d3ae13702f0224dbc85b7d7937aec66f0d4"
+  },
+  "context": {
+    "primary": [
+      {
+        "source": "code",
+        "path": "src/core/compilation/contextCompiler.ts",
+        "symbols": [
+          "CompileContextOptions",
+          "compileContext"
+        ],
+        "relevance": 0.4,
+        "provenance": {
+          "source": "code",
+          "path": "src/core/compilation/contextCompiler.ts"
+        },
+        "trustLevel": "fact"
+      },
+      {
+        "source": "test",
+        "path": "test/compilation/contextCompiler.test.ts",
+        "relevance": 0.36000000000000004,
+        "provenance": {
+          "source": "test",
+          "path": "test/compilation/contextCompiler.test.ts"
+        },
+        "trustLevel": "fact"
+      },
+      {
+        "source": "code",
+        "path": "src/cli/argv.ts",
+        "symbols": [
+          "ContextCommandArgs"
+        ],
+        "relevance": 0.2,
+        "provenance": {
+          "source": "code",
+          "path": "src/cli/argv.ts"
+        },
+        "trustLevel": "fact"
+      },
+      {
+        "source": "code",
+        "path": "src/cli/runContext.ts",
+        "symbols": [
+          "RunContextOptions",
+          "runContext"
+        ],
+        "relevance": 0.2,
+        "provenance": {
+          "source": "code",
+          "path": "src/cli/runContext.ts"
+        },
+        "trustLevel": "fact"
+      },
+      {
+        "source": "code",
+        "path": "src/core/contextPackage.ts",
+        "symbols": [
+          "createEmptyContextPackage"
+        ],
+        "relevance": 0.2,
+        "provenance": {
+          "source": "code",
+          "path": "src/core/contextPackage.ts"
+        },
+        "trustLevel": "fact"
+      },
+      {
+        "source": "code",
+        "path": "src/core/evidence/testEvidenceRetriever.ts",
+        "symbols": [
+          "TEST_RELEVANCE_FACTOR",
+          "findRelatedTestFiles",
+          "retrieveTestEvidence"
+        ],
+        "relevance": 0.2,
+        "provenance": {
+          "source": "code",
+          "path": "src/core/evidence/testEvidenceRetriever.ts"
+        },
+        "trustLevel": "fact"
+      },
+      {
+        "source": "code",
+        "path": "src/core/repository/fileClassifier.ts",
+        "symbols": [
+          "TEST_PATTERN",
+          "TEST_FILE_PATTERN"
+        ],
+        "relevance": 0.2,
+        "provenance": {
+          "source": "code",
+          "path": "src/core/repository/fileClassifier.ts"
+        },
+        "trustLevel": "fact"
+      },
+      {
+        "source": "code",
+        "path": "src/core/schema/contextPackage.schema.ts",
+        "symbols": [
+          "engineeringContextPackageSchema"
+        ],
+        "relevance": 0.2,
+        "provenance": {
+          "source": "code",
+          "path": "src/core/schema/contextPackage.schema.ts"
+        },
+        "trustLevel": "fact"
+      },
+      {
+        "source": "code",
+        "path": "src/core/schema/validate.ts",
+        "symbols": [
+          "validateContextPackage"
+        ],
+        "relevance": 0.2,
+        "provenance": {
+          "source": "code",
+          "path": "src/core/schema/validate.ts"
+        },
+        "trustLevel": "fact"
+      },
+      {
+        "source": "code",
+        "path": "src/core/types/contextPackage.ts",
+        "symbols": [
+          "CONTEXT_PACKAGE_VERSION",
+          "ContextEvidence",
+          "EngineeringContextPackage"
+        ],
+        "relevance": 0.2,
+        "provenance": {
+          "source": "code",
+          "path": "src/core/types/contextPackage.ts"
+        },
+        "trustLevel": "fact"
+      },
+      {
+        "source": "code",
+        "path": "src/github/prEventContext.ts",
+        "symbols": [
+          "PullRequestEventContext",
+          "loadPullRequestEventContext"
+        ],
+        "relevance": 0.2,
+        "provenance": {
+          "source": "code",
+          "path": "src/github/prEventContext.ts"
+        },
+        "trustLevel": "fact"
+      },
+      {
+        "source": "code",
+        "path": "src/mcp/tool.ts",
+        "symbols": [
+          "COMPILE_ENGINEERING_CONTEXT_TOOL_NAME",
+          "COMPILE_ENGINEERING_CONTEXT_TOOL_DESCRIPTION",
+          "compileEngineeringContextInputShape",
+          "CompileEngineeringContextInput",
+          "compileEngineeringContextTool"
+        ],
+        "relevance": 0.2,
+        "provenance": {
+          "source": "code",
+          "path": "src/mcp/tool.ts"
+        },
+        "trustLevel": "fact"
+      },
+      {
+        "source": "code",
+        "path": "vscode-extension/src/compileContextCommand.ts",
+        "symbols": [
+          "compileEngineeringContext"
+        ],
+        "relevance": 0.2,
+        "provenance": {
+          "source": "code",
+          "path": "vscode-extension/src/compileContextCommand.ts"
+        },
+        "trustLevel": "fact"
+      },
+      {
+        "source": "code",
+        "path": "src/core/compilation/contextCompressor.ts",
+        "relevance": 0.2,
+        "provenance": {
+          "source": "code",
+          "path": "src/core/compilation/contextCompressor.ts"
+        },
+        "trustLevel": "fact"
+      },
+      {
+        "source": "code",
+        "path": "src/core/compilation/contextSelector.ts",
+        "relevance": 0.2,
+        "provenance": {
+          "source": "code",
+          "path": "src/core/compilation/contextSelector.ts"
+        },
+        "trustLevel": "fact"
+      },
+      {
+        "source": "test",
+        "path": "test/cli/argv.test.ts",
+        "relevance": 0.18000000000000002,
+        "provenance": {
+          "source": "test",
+          "path": "test/cli/argv.test.ts"
+        },
+        "trustLevel": "fact"
+      },
+      {
+        "source": "test",
+        "path": "test/cli/runContext.test.ts",
+        "relevance": 0.18000000000000002,
+        "provenance": {
+          "source": "test",
+          "path": "test/cli/runContext.test.ts"
+        },
+        "trustLevel": "fact"
+      },
+      {
+        "source": "test",
+        "path": "test/compilation/contextCompressor.test.ts",
+        "relevance": 0.18000000000000002,
+        "provenance": {
+          "source": "test",
+          "path": "test/compilation/contextCompressor.test.ts"
+        },
+        "trustLevel": "fact"
+      },
+      {
+        "source": "test",
+        "path": "test/compilation/contextSelector.test.ts",
+        "relevance": 0.18000000000000002,
+        "provenance": {
+          "source": "test",
+          "path": "test/compilation/contextSelector.test.ts"
+        },
+        "trustLevel": "fact"
+      }
+    ],
+    "supporting": [
+      {
+        "source": "git",
+        "path": "src/cli/argv.ts",
+        "identifier": "Implementation of Phase 16 : Engineering Intelligence where Outcomes feed back into ranking/memory quality completed.",
+        "relevance": 1,
+        "provenance": {
+          "source": "git",
+          "path": "src/cli/argv.ts",
+          "commit": "c8d5698ac04a07bc02fe549cae354102ea1d5c8c",
+          "timestamp": "2026-09-12"
+        },
+        "trustLevel": "fact"
+      },
+      {
+        "source": "git",
+        "path": "src/cli/runContext.ts",
+        "identifier": "Implementation of Phase 16 : Engineering Intelligence where Outcomes feed back into ranking/memory quality completed.",
+        "relevance": 1,
+        "provenance": {
+          "source": "git",
+          "path": "src/cli/runContext.ts",
+          "commit": "c8d5698ac04a07bc02fe549cae354102ea1d5c8c",
+          "timestamp": "2026-09-12"
+        },
+        "trustLevel": "fact"
+      },
+      {
+        "source": "git",
+        "path": "src/core/compilation/contextCompiler.ts",
+        "identifier": "Implementation of Phase 15 : Verification Intelligence , where ECC recommends a risk-scaled verification plan completed.",
+        "relevance": 1,
+        "provenance": {
+          "source": "git",
+          "path": "src/core/compilation/contextCompiler.ts",
+          "commit": "5076759672f10e056751c6f964fbad9f9214c5f1",
+          "timestamp": "2026-09-12"
+        },
+        "trustLevel": "fact"
+      },
+      {
+        "source": "git",
+        "path": "src/core/compilation/contextCompressor.ts",
+        "identifier": "Implementation of  Phase 6 : Context Compilation with Select+compress ranked evidence into a valid package within a token budget, with excluded reasons completed.",
+        "relevance": 1,
+        "provenance": {
+          "source": "git",
+          "path": "src/core/compilation/contextCompressor.ts",
+          "commit": "17e8f155d6066a5f8aa3235c1dda0e42f3aee79e",
+          "timestamp": "2026-09-12"
+        },
+        "trustLevel": "fact"
+      },
+      {
+        "source": "git",
+        "path": "src/core/compilation/contextSelector.ts",
+        "identifier": "Implementation of  Phase 6 : Context Compilation with Select+compress ranked evidence into a valid package within a token budget, with excluded reasons completed.",
+        "relevance": 1,
+        "provenance": {
+          "source": "git",
+          "path": "src/core/compilation/contextSelector.ts",
+          "commit": "17e8f155d6066a5f8aa3235c1dda0e42f3aee79e",
+          "timestamp": "2026-09-12"
+        },
+        "trustLevel": "fact"
+      },
+      {
+        "source": "git",
+        "path": "src/core/contextPackage.ts",
+        "identifier": "Implementation of Phase 7 : Trust + Provenance with Every item has provenance; FACT/DERIVED/INFERENCE/UNKNOWN never blurred; conflicts surfaced, not silently resolved completed.",
+        "relevance": 1,
+        "provenance": {
+          "source": "git",
+          "path": "src/core/contextPackage.ts",
+          "commit": "963b728b073a514bfb0e6ff0af679968887cc8a4",
+          "timestamp": "2026-09-12"
+        },
+        "trustLevel": "fact"
+      },
+      {
+        "source": "git",
+        "path": "src/core/evidence/testEvidenceRetriever.ts",
+        "identifier": "Implementation of Phase 4: Evidence Retrieval: Retrieve candidate evidence (code/git/tests) relevant to a classified task completed.",
+        "relevance": 1,
+        "provenance": {
+          "source": "git",
+          "path": "src/core/evidence/testEvidenceRetriever.ts",
+          "commit": "fcd61d02dde02687346cfd1f8423386b8d8d852b",
+          "timestamp": "2026-09-12"
+        },
+        "trustLevel": "fact"
+      },
+      {
+        "source": "git",
+        "path": "src/core/repository/fileClassifier.ts",
+        "identifier": "Implementation of Phase 14 : Engineering Memory with Decisions/incidents/outcomes persist and are retrievable as evidence completed.",
+        "relevance": 1,
+        "provenance": {
+          "source": "git",
+          "path": "src/core/repository/fileClassifier.ts",
+          "commit": "fab16808d9aaaa75adf16ea05c42eaa5ad3d2369",
+          "timestamp": "2026-09-12"
+        },
+        "trustLevel": "fact"
+      },
+      {
+        "source": "git",
+        "path": "src/core/schema/contextPackage.schema.ts",
+        "identifier": "Implementation of Phase 7 : Trust + Provenance with Every item has provenance; FACT/DERIVED/INFERENCE/UNKNOWN never blurred; conflicts surfaced, not silently resolved completed.",
+        "relevance": 1,
+        "provenance": {
+          "source": "git",
+          "path": "src/core/schema/contextPackage.schema.ts",
+          "commit": "963b728b073a514bfb0e6ff0af679968887cc8a4",
+          "timestamp": "2026-09-12"
+        },
+        "trustLevel": "fact"
+      },
+      {
+        "source": "git",
+        "path": "src/core/schema/validate.ts",
+        "identifier": "Implementation of Phase 1:  ECC Foundation completed and the memory bank has been updated.",
+        "relevance": 1,
+        "provenance": {
+          "source": "git",
+          "path": "src/core/schema/validate.ts",
+          "commit": "dc7e8e4cd970851a43906e20c97d5e6410f1e05a",
+          "timestamp": "2026-09-12"
+        },
+        "trustLevel": "fact"
+      },
+      {
+        "source": "git",
+        "path": "src/cli/argv.ts",
+        "identifier": "Implementation of Phase 14 : Engineering Memory with Decisions/incidents/outcomes persist and are retrievable as evidence completed.",
+        "relevance": 0.8,
+        "provenance": {
+          "source": "git",
+          "path": "src/cli/argv.ts",
+          "commit": "fab16808d9aaaa75adf16ea05c42eaa5ad3d2369",
+          "timestamp": "2026-09-12"
+        },
+        "trustLevel": "fact"
+      },
+      {
+        "source": "git",
+        "path": "src/cli/runContext.ts",
+        "identifier": "Implementation of  Phase 8 : CLI with ecc context \"<task>\" runs end-to-end and prints a valid package completed.",
+        "relevance": 0.8,
+        "provenance": {
+          "source": "git",
+          "path": "src/cli/runContext.ts",
+          "commit": "9405c83cba93a8d6e34ad8a28124e4723dec3198",
+          "timestamp": "2026-09-12"
+        },
+        "trustLevel": "fact"
+      },
+      {
+        "source": "git",
+        "path": "src/core/compilation/contextCompiler.ts",
+        "identifier": "Implementation of Phase 7 : Trust + Provenance with Every item has provenance; FACT/DERIVED/INFERENCE/UNKNOWN never blurred; conflicts surfaced, not silently resolved completed.",
+        "relevance": 0.8,
+        "provenance": {
+          "source": "git",
+          "path": "src/core/compilation/contextCompiler.ts",
+          "commit": "963b728b073a514bfb0e6ff0af679968887cc8a4",
+          "timestamp": "2026-09-12"
+        },
+        "trustLevel": "fact"
+      },
+      {
+        "source": "git",
+        "path": "src/core/contextPackage.ts",
+        "identifier": "Implementation of Phase 1:  ECC Foundation completed and the memory bank has been updated.",
+        "relevance": 0.8,
+        "provenance": {
+          "source": "git",
+          "path": "src/core/contextPackage.ts",
+          "commit": "dc7e8e4cd970851a43906e20c97d5e6410f1e05a",
+          "timestamp": "2026-09-12"
+        },
+        "trustLevel": "fact"
+      },
+      {
+        "source": "git",
+        "path": "src/core/repository/fileClassifier.ts",
+        "identifier": "Implementation of Phase 2: Repository Intelligence Analyze a real repo: classify files, build a basic dependency graph completed.",
+        "relevance": 0.8,
+        "provenance": {
+          "source": "git",
+          "path": "src/core/repository/fileClassifier.ts",
+          "commit": "67e5a4343fe9363ceef2c1f6002ba276dae25699",
+          "timestamp": "2026-09-12"
+        },
+        "trustLevel": "fact"
+      },
+      {
+        "source": "git",
+        "path": "src/core/schema/contextPackage.schema.ts",
+        "identifier": "Implementation of Phase 1:  ECC Foundation completed and the memory bank has been updated.",
+        "relevance": 0.8,
+        "provenance": {
+          "source": "git",
+          "path": "src/core/schema/contextPackage.schema.ts",
+          "commit": "dc7e8e4cd970851a43906e20c97d5e6410f1e05a",
+          "timestamp": "2026-09-12"
+        },
+        "trustLevel": "fact"
+      },
+      {
+        "source": "git",
+        "path": "src/cli/argv.ts",
+        "identifier": "Implementation of  Phase 8 : CLI with ecc context \"<task>\" runs end-to-end and prints a valid package completed.",
+        "relevance": 0.6,
+        "provenance": {
+          "source": "git",
+          "path": "src/cli/argv.ts",
+          "commit": "9405c83cba93a8d6e34ad8a28124e4723dec3198",
+          "timestamp": "2026-09-12"
+        },
+        "trustLevel": "fact"
+      },
+      {
+        "source": "git",
+        "path": "src/core/compilation/contextCompiler.ts",
+        "identifier": "Implementation of  Phase 6 : Context Compilation with Select+compress ranked evidence into a valid package within a token budget, with excluded reasons completed.",
+        "relevance": 0.6,
+        "provenance": {
+          "source": "git",
+          "path": "src/core/compilation/contextCompiler.ts",
+          "commit": "17e8f155d6066a5f8aa3235c1dda0e42f3aee79e",
+          "timestamp": "2026-09-12"
+        },
+        "trustLevel": "fact"
+      }
+    ]
+  },
+  "conflicts": [],
+  "history": [],
+  "constraints": [],
+  "unknowns": [],
+  "verification": [
+    "Risk: medium (task type 'test' inherently carries elevated risk; large blast radius: 19 primary evidence items)",
+    "Run the existing tests: test/compilation/contextCompiler.test.ts, test/cli/argv.test.ts, test/cli/runContext.test.ts, test/compilation/contextCompressor.test.ts, test/compilation/contextSelector.test.ts",
+    "Manually verify the primary evidence above reflects the intended change"
+  ],
+  "excluded": [
+    {
+      "reason": "token_budget_exceeded",
+      "count": 6
+    }
+  ]
+}

@@ -21,16 +21,16 @@ Format per spec §20. Only entries marked DECISION are human-approved. PROPOSAL 
 
 ---
 
-## D-002 — Stack: TypeScript on Node, ESM, zod, vitest, eslint (PROPOSAL)
+## D-002 — Stack: TypeScript on Node, ESM, zod, vitest, eslint (DECISION)
 
-- **Date:** 2026-09-19 · **Phase:** 0 · **Status:** PROPOSAL — to be decided at the start of Phase 1
+- **Date:** 2026-09-19 (proposed) → 2026-09-22 (decided) · **Phase:** 1 · **Status:** DECIDED
 - **Context:** No stack chosen. Both TS siblings share exactly this stack.
 - **Alternatives:** Python (matches skills platform); mixed.
-- **Proposed:** TypeScript/Node ≥20, ESM, zod, vitest, eslint flat config; local store SQLite (`node:sqlite` if Node 22+ is acceptable, else one maintained driver); UI decided after `/frontend-design`, React/Vite as default candidate.
+- **Chosen:** TypeScript/Node ≥22.13, ESM, zod v4, vitest, eslint flat config (typescript-eslint, `consistent-type-imports`, `no-console` outside the CLI entry).
 - **Reason:** One language across ECC, EEP, and this repo; identical tooling; JSON contracts consumed natively; ECC's small-module convention transfers directly.
 - **Tradeoffs:** Python skills become an optional subprocess integration rather than a native one.
 - **Risk:** R-04.
-- **Evidence:** ECC `package.json` and EEP `package.json` read 2026-09-19.
+- **Evidence:** ECC `package.json` and EEP `package.json` read 2026-09-19; stack scaffolded and verified working (lint/typecheck/test/build/audit all pass) 2026-09-22.
 
 ---
 
@@ -38,3 +38,29 @@ Format per spec §20. Only entries marked DECISION are human-approved. PROPOSAL 
 
 - **Date:** 2026-09-19 · **Phase:** 0 · **Status:** DECIDED (spec §72: "DO NOT rewrite code. DO NOT implement major features.")
 - **Chosen:** Memory bank + baseline report. No `README.md` rewrite (deferred to Phase 1), no `package.json`, no commit unless asked.
+
+---
+
+## D-004 — Local storage: SQLite via `node:sqlite` (DECISION)
+
+- **Date:** 2026-09-22 · **Phase:** 1 · **Status:** DECIDED
+- **Context:** Local-first storage needed for settings and audit log (spec §50, §67); more entities arrive in later phases.
+- **Alternatives:** `better-sqlite3` (native addon, extra install step); `sql.js` (WASM, slower); a JSON-file store (no transactions, no indexes).
+- **Chosen:** Node's built-in `node:sqlite` (`DatabaseSync`), requiring Node ≥22.13. No native addon, no extra dependency, ships with the runtime.
+- **Reason:** Zero install friction, transactional (`BEGIN`/`COMMIT`/`ROLLBACK` verified), WAL mode, works synchronously which keeps the storage layer simple.
+- **Tradeoffs:** Raises the minimum Node version above ECC/EEP's `>=20`. Async SQLite APIs are not yet stable in Node, so all storage calls are synchronous — acceptable at local, single-user scale.
+- **Risk:** None new; single-file module (`src/storage/sqliteDriver.ts`) isolates the dependency so swapping drivers later is contained.
+- **Evidence:** `node -e` smoke test confirmed `node:sqlite` works without flags on the installed Node 24 runtime, 2026-09-22.
+
+---
+
+## D-005 — Experience API is in-process, not HTTP, in Phase 1 (DECISION)
+
+- **Date:** 2026-09-22 · **Phase:** 1 · **Status:** DECIDED
+- **Context:** Spec §91 requires an Experience API as the single surface every UI talks to; §06-system-architecture left in-process vs HTTP as UNKNOWN.
+- **Alternatives:** HTTP server now; in-process function interface now, HTTP added later if a remote/web UI needs it.
+- **Chosen:** In-process (`ExperienceApi` TypeScript interface, `createApp()` composition root). The CLI is its only consumer today.
+- **Reason:** No UI exists yet to justify a network boundary (spec §92: no infrastructure without a measured need); an HTTP layer can wrap the same interface later without changing callers.
+- **Tradeoffs:** A future web UI needs a thin HTTP adapter added on top; not built now.
+- **Risk:** None; reversible, additive change later.
+- **Evidence:** Golden use cases 1–3 only need local CLI/editor access in Phase 1–5.

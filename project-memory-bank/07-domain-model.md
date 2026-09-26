@@ -1,7 +1,14 @@
 # 07 — Domain Model
 
-Status: UNKNOWN — to be defined in Phase 1
-Last updated: 2026-09-19 (Phase 0)
+Status: ACTIVE (Phase 1–2 subset defined as zod schemas; storage per-phase)
+Last updated: 2026-09-22 (Phase 1)
+
+## FACT — Phase 1 schemas (`src/domain/entities.ts`)
+
+Goal, Outcome, Project, Milestone, Task, MemoryEntry, Decision, Evidence — each extending
+`baseEntitySchema` (id, createdAt, updatedAt, provenance, trustLevel, sensitivity,
+supersededBy). See [[08-data-model]] for which have tables today (none yet beyond
+settings/audit) and which phase adds each table.
 
 ## FACT — Candidate entities (spec §65; implement only when justified)
 
@@ -16,6 +23,7 @@ Goal → Outcome → Project → Milestone → Task → Evidence.
 - ECC `EngineeringContextPackage` (task, repository, context.primary/supporting, conflicts, verification, unknowns, excluded, history) and `MemoryEntry {id, type, summary, detail?, tags?, relatedPaths?, timestamp, signal?}`.
 - EEP domain schemas: Task, Experiment, Condition, Run, Trace, Evidence, ContextArtifact, Decision, Action, Verification, Outcome, Metric, Evaluation, Report (14 zod schemas, branded IDs, ISO timestamps).
 
-## NEXT ACTION (Phase 1)
+## NEXT ACTION (Phase 2)
 
-Define the Phase 1–2 subset (User, Goal, Objective, Project, Task, Memory, Decision, Evidence) with provenance, trust level, freshness, and supersession fields per [[14-memory-model]] and [[15-trust-model]].
+Add a `User` schema only if a second user context ever appears (single-user assumption today);
+add Goal/Outcome/Project/Milestone/Task repositories and tables.

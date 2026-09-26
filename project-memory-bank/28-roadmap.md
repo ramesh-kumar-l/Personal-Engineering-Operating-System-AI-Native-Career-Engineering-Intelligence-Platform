@@ -8,8 +8,8 @@ The spec's default 15-phase roadmap (§71) is adapted below. The actual next pha
 | Phase | Scope | Bucket | Tag | Status |
 |---|---|---|---|---|
 | 0 | Baseline + memory bank | NOW | REQUIRED | COMPLETE 2026-09-19 |
-| 1 | Product foundation: decide D-002 stack + local storage; repo scaffold; test/lint/CI; minimal Experience API; README + docs skeleton; security/privacy baseline; zod mirror of ECC's package schema + adapter smoke test | NEXT | REQUIRED | awaiting approval |
-| 2 | Goal + Execution Intelligence: Goal→Outcome→Project→Milestone→Task; "I have N minutes" → NOW/NEXT/LATER/WHY/EXPECTED OUTCOME (golden use case 1) | NEXT | REQUIRED | — |
+| 1 | Product foundation: decide D-002 stack + local storage; repo scaffold; test/lint/CI; minimal Experience API; README + docs skeleton; security/privacy baseline; zod mirror of ECC's package schema + adapter smoke test | NOW | REQUIRED | COMPLETE 2026-09-22 |
+| 2 | Goal + Execution Intelligence: Goal→Outcome→Project→Milestone→Task; "I have N minutes" → NOW/NEXT/LATER/WHY/EXPECTED OUTCOME (golden use case 1) | NOW | REQUIRED | awaiting approval |
 | 3 | Engineering Memory (cross-repo, personal): memory types, provenance, freshness, supersession, deterministic retrieval | NEXT | REQUIRED | — |
 | 4 | Engineering Work → Evidence: Problem/Action/Decision/Impact capture, evidence categories, Staff signal gaps (golden use case 3) | NEXT | REQUIRED | — |
 | 5 | Context Compiler integration: ECC adapter + personal memory/goals/decisions merged into minimum sufficient context, with before/after token tracking (golden use case 2) | NEXT | REQUIRED | — |

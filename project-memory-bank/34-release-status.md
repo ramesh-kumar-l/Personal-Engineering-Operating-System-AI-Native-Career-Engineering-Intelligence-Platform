@@ -1,18 +1,18 @@
 # 34 — Release Status
 
 Status: ACTIVE
-Last updated: 2026-09-19 (Phase 0)
+Last updated: 2026-09-22 (Phase 1)
 
 | Field | Value |
 |---|---|
-| Version | 0.0.0 (unreleased, no `package.json`) |
-| Changelog | none |
-| Migration notes | none |
-| Test status | none (see [[33-test-status]]) |
-| Security status | not reviewed (nothing to review) |
+| Version | 0.1.0 (unreleased; not published anywhere; local use only) |
+| Changelog | none (pre-first-release; will start at first tagged version) |
+| Migration notes | schema migration `0001_foundation` (settings, audit_log); forward-only, transactional, see [[08-data-model]] |
+| Test status | 63/63 passing, see [[33-test-status]] |
+| Security status | baseline only, see [[17-security-model]]; no external review |
 | Known limitations | [[32-known-limitations]] |
-| Documentation status | memory bank only; `README.md` is a title line |
-| Stability claim | none — nothing is validated |
+| Documentation status | memory bank + README with install/usage instructions |
+| Stability claim | none — Phase 1 foundation only, not validated by real daily use yet |
 
 ## CONSTRAINT (spec §70)
 

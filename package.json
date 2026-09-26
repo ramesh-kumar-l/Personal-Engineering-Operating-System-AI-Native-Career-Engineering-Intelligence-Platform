@@ -1,0 +1,38 @@
+{
+  "name": "peos",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Personal Engineering Operating System - AI-native career and engineering intelligence platform (Layer 1: personal OS).",
+  "type": "module",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "bin": {
+    "peos": "./dist/cli/main.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint .",
+    "audit:deps": "npm audit --audit-level=high",
+    "check": "npm run lint && npm run typecheck && npm test",
+    "peos": "node dist/cli/main.js"
+  },
+  "dependencies": {
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.13.0",
+    "@types/node": "^24.0.0",
+    "eslint": "^9.13.0",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.13.0",
+    "vitest": "^5.0.0"
+  }
+}

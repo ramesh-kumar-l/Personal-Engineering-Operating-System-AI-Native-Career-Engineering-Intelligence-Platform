@@ -1,7 +1,17 @@
 # 12 — AI Architecture
 
-Status: UNKNOWN — to be defined in Phase 1
-Last updated: 2026-09-19 (Phase 0)
+Status: ACTIVE (offline boundary shipped; no provider wired yet)
+Last updated: 2026-09-22 (Phase 1)
+
+## FACT — What Phase 1 built
+
+`AiGateway` (`src/ai/aiProvider.ts`) is the single chokepoint for every model call: it checks
+`AiPolicy` (`mode: offline|external`, `maxExternalSensitivity`) before invoking a provider, and
+audits every allow/deny/success/failure via `AuditRepository`. `checkPolicy` denies all
+`external` providers outright when `mode` is `offline` (the shipped default), and otherwise
+denies any request whose `Sensitivity` exceeds the configured ceiling. The only provider wired
+is `noopProvider` (`external: false`), which always returns `ADAPTER_UNAVAILABLE` — there is no
+external AI call anywhere in this repo yet.
 
 ## FACT
 
@@ -15,9 +25,11 @@ Last updated: 2026-09-19 (Phase 0)
 - Significant AI recommendations expose What / Why / Evidence / Confidence / Assumptions / Unknowns. No private chain-of-thought exposure.
 - Provider abstraction (AI Gateway → Provider Adapter → Model) only when a second provider is actually needed. Single provider first.
 
-## PROPOSAL
+## NEXT ACTION (first phase that needs a live model, e.g. Phase 4 evidence extraction)
 
-Phase 1: define a thin, local-first AI boundary interface with an explicit "no external call" mode so every use case degrades gracefully offline. First provider: Claude (default to the latest model IDs; see the claude-api skill before implementing). Decide in Phase 1.
+Wire a real `AiProvider` (Claude; check current model IDs before implementing) behind the
+existing gateway. No gateway changes needed — only a new provider implementation and an
+explicit `PEOS_AI_MODE=external` opt-in plus a chosen `maxExternalSensitivity`.
 
 ## RISK
 

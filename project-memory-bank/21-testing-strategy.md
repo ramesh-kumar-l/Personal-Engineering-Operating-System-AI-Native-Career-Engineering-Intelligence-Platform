@@ -1,11 +1,17 @@
 # 21 — Testing Strategy
 
-Status: UNKNOWN — to be defined in Phase 1
-Last updated: 2026-09-19 (Phase 0)
+Status: ACTIVE
+Last updated: 2026-09-22 (Phase 1)
 
-## FACT
+## FACT — Adopted in Phase 1
 
-No tests exist in this repo. See [[33-test-status]].
+vitest, 63 tests across 12 files, unit tests per module. One gated real-subprocess test
+(`eccAdapter.realCli.test.ts`, `describe.skipIf` when no sibling ECC checkout exists) proves
+the zod mirror against live output without making every CI run depend on a sibling checkout.
+The fixture (`test/fixtures/ecc/package.45fd3d3.json`) is a real package captured from ECC
+commit `45fd3d3`, pinned by commit SHA per [[22-integrations]]'s drift mitigation. A dedicated
+`test/quality/fileSize.test.ts` enforces the 300-line-per-file modularity rule as a test, not
+just a convention. See [[33-test-status]] for current counts.
 
 ## FACT — Sibling conventions to adopt (proven across ECC/EEP)
 
@@ -17,6 +23,8 @@ No tests exist in this repo. See [[33-test-status]].
 
 Meaningful coverage over count. AI features tested against correct, incorrect, ambiguous, missing, conflicting, stale, and malicious inputs, prompt injection, hallucination, and tool failure. Regression datasets where practical.
 
-## NEXT ACTION (Phase 1)
+## NEXT ACTION (Phase 2)
 
-Scaffold vitest + a first adapter test that validates a captured real ECC package against this repo's zod mirror.
+Add fixture-based tests for Goal/Task repositories once migration `0002_goals` exists, following
+the same prepared-statement + zod-at-the-boundary + injectable-clock pattern as
+`settingsRepository`/`auditRepository`.
